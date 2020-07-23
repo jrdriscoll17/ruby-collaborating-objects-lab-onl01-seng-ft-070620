@@ -33,5 +33,11 @@ class Artist
 
   def print_songs
     Song.all.filter{|song| puts song.name if song.artist == self}
+
+    Song.all.collect do |song|
+      if song.artist == self
+        song
+      end
+    end
   end
 end
